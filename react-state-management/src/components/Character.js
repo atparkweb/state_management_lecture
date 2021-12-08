@@ -15,7 +15,7 @@ function Character({ data }) {
         </ul>
       </header>
       <section className="profile-card-section">
-        <h2>Attribtutes</h2>
+        <h2>Attributes</h2>
         <Attributes attributes={attrs} />
       </section>
       <section className="profile-card-section">
