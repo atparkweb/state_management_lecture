@@ -1,0 +1,16 @@
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.app {
+  display: flex;
+}
+
+.character-list {
+  flex: 1 1 0;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem;
+}
