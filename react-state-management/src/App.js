@@ -5,9 +5,24 @@ import { getPlayers } from './data/players';
 
 function App() {
   const [playerList, setPlayerList] = useState(getPlayers());
+  const [miss, setMiss] = useState(false);
 
-  const handleAttack = (player) => {
-    // TODO: Implement
+  const handleAttack = (playerId) => {
+    const newList = playerList.map(p => {
+      if (p.id === playerId) {
+        const damage = Math.round(Math.random());
+
+        if (damage === 0) {
+          setMiss(true);
+          setTimeout(() => setMiss(false), 500);
+        } else {
+          p.hp -= damage;
+        }
+      }
+      return p;
+    });
+
+    setPlayerList(newList);
   };
 
   const handleRemove = (player) => {
@@ -17,7 +32,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <ControlPanel players={playerList} onAttack={handleAttack} onRemove={handleRemove} />
+        <ControlPanel players={playerList} onAttack={handleAttack} onRemove={handleRemove} miss={miss} />
       </header>
 
       <main className="app-main">
