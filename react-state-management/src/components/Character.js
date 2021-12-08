@@ -1,8 +1,7 @@
 import Attributes from './Attributes'
-import Status from './Status'
 
 function Character({ data }) {
-  const { name, race, klass, attrs, hp, level, status } = data;
+  const { name, race, klass, attrs, alignment, background, level, hp } = data;
 
   return (
     <div className="profile-card">
@@ -10,14 +9,20 @@ function Character({ data }) {
         <h1>{name}</h1>
         <ul>
           <li>{race}</li>
-          <li>Level {level} {klass}</li>
+          <li>{klass} {level}</li>
+          <li>Background: {background}</li>
+          <li>Alignment: {alignment}</li>
         </ul>
       </header>
       <section>
-        <Attributes attrs={attrs} />
+        <h2>Attribtutes</h2>
+        <Attributes attributes={attrs} />
       </section>
       <section>
-        <Status hp={hp} status={status} />
+        <h2>Status</h2>
+        <ul>
+          <li><abbr title="Health Points">HP</abbr>: {hp}</li>
+        </ul>
       </section>
     </div>
   )
