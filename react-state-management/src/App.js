@@ -3,23 +3,20 @@ import Character from "./components/Character";
 function App() {
   const andy = {
     name: "Brandalf",
-    race: "half-orc",
-    klass: "sorcerer",
-    hp: 30,
+    race: "Half-orc",
+    klass: "Sorcerer",
     level: 5,
+    alignment: "Chaotic Good",
+    background: "Soldier",
+    hp: 30,
     attrs: {
-      strength: 8,
-      intelligence: 17,
-      wisdom: 14,
-      dexterity: 8,
-      charisma: 4,
-      constitution: 10,
-      perception: 11
+      str: { value: 8, mod: 0 },
+      int: { value: 15, mod: 0 },
+      wis: { value: 14, mod: 0 },
+      dex: { value: 8, mod: 0 },
+      cha: { value: 4, mod: 0 },
+      con: { value: 10, mod: 0 }
     },
-    status: {
-      bonuses: [],
-      penalties: []
-    }
   }
 
   return (
