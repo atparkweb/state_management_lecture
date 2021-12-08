@@ -21,7 +21,7 @@ function Attributes({ attrs }) {
         <dt><abbr title="perception">Str</abbr></dt><dd>{perception}</dd>
       </dl>
     </div>
-  )
+  );
 }
 
-export default Attributes
+export default Attributes;
