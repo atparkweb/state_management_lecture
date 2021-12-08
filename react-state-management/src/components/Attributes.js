@@ -1,16 +1,19 @@
-const attributes = {
-  str: "strength",
-  int: "intelligence",
-  con: "constitution",
-  wis: "wisdom",
-  dex: "dexterity",
-  cha: "charisma"
+const getAttributes = () => {
+  return {
+    str: "strength",
+    int: "intelligence",
+    con: "constitution",
+    wis: "wisdom",
+    dex: "dexterity",
+    cha: "charisma"
+  };
 };
 
 function attributeItems(attrs) {
   let content = [];
+  const attributes = getAttributes();
 
-  for (const key in  attributes) {
+  for (const key in attributes) {
     content.push(
       <li key={key} className="attr-card-item">
         <abbr title={attributes[key]} className="attr-card-key">{key}: </abbr>
