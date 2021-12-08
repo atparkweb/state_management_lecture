@@ -12,9 +12,9 @@ function attributeItems(attrs) {
 
   for (const key in  attributes) {
     content.push(
-      <li key={key}>
-        <abbr title={attributes[key]}>{key}: </abbr>
-        <span>{attrs[key].value} ({attrs[key].mod})</span>
+      <li key={key} className="attr-card-item">
+        <abbr title={attributes[key]} className="attr-card-key">{key}: </abbr>
+        <span className="attr-card-value">{attrs[key].value} ({attrs[key].mod})</span>
       </li>
     )
   }
@@ -24,8 +24,8 @@ function attributeItems(attrs) {
 
 function Attributes({ attributes }) {
   return (
-    <div className="attribute-card">
-      <dl>{attributeItems(attributes)}</dl>
+    <div className="attr-card">
+      <ul>{attributeItems(attributes)}</ul>
     </div>
   );
 }

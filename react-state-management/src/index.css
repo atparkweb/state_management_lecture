@@ -1,3 +1,8 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -13,4 +18,15 @@ ul {
   border: 1px solid #ddd;
   padding: 1rem;
   margin: 1rem;
+}
+
+.profile-card-section {
+  border-top: 1px dashed #666;
+  margin-top: 2rem;
+}
+
+.attr-card-key {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
 }
