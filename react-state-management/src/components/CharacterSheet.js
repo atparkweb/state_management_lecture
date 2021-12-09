@@ -8,6 +8,7 @@ function CharacterSheet({ character, withAttributes }) {
     <div className="char-sheet">
       <header>
         <h1>{name}</h1>
+        <div className={`char-sheet__icon ${klass.toLowerCase()}`}></div>
         <ul>
           <li>{race} {klass}</li>
           <li><span className="alignment">{alignment}</span></li>
