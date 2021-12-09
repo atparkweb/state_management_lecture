@@ -77,7 +77,7 @@ const getCharacters = () => {
       name: "Wesleorg",
       race: "Gnome",
       klass: "Warlock",
-      level: 4,
+      level: 5,
       alignment: "Lawful Evil",
       background: "Criminal",
       hp: 12,

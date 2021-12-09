@@ -45,9 +45,14 @@ ul {
 
 .control-panel {
   display: flex;
+  margin: 0 auto;
 }
 .control-panel-alert {
   flex: 1 1 50%;
   background-color: #f00;
   color: #fff;
+}
+
+.alignment {
+  font-size: 0.5rem;
 }
