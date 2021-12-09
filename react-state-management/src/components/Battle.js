@@ -20,7 +20,7 @@ function Battle() {
   return (
     <>
       <header className="battle-header">
-        <h1 className="battler-header__heading">Battle Field</h1>
+        <h1 className="battle-header__heading">Battle Field</h1>
       </header>
 
       <main className="battle-main">
@@ -28,7 +28,7 @@ function Battle() {
         {characters.map(c => {
           return (
             <div key={c.name} className="col">
-              <CharacterSheet character={c} onAttack={handleAttack} />
+              <CharacterSheet character={c} onAttack={handleAttack} showAttributes={false} />
             </div>
           )
         })}
