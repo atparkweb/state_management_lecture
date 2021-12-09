@@ -75,3 +75,18 @@ ul {
 .alignment {
   font-size: 0.75rem;
 }
+
+.char-sheet__controls {
+  margin-top: 2rem;
+}
+
+.button {
+  background: none;
+  border: 1px solid #eee;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  width: 100%;
+}
