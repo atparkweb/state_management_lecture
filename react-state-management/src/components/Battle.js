@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { getCharacters } from "./data/characters";
+import { getCharacters } from "../data/characters";
 import ControlPanel from "./ControlPanel";
 import CharacterSheet from "./CharacterSheet";
 
 function Battle() {
   const [miss, setMiss] = useState(false);
+  const [targetId, setTargetId] = useState(1);
   const [characters, setCharacters] = useState(getCharacters());
 
   const handleAttack = (targetId) => {
@@ -28,11 +29,19 @@ function Battle() {
 
   return (
     <>
-      <header className="control-header">
+      <header className="battle-header">
+        <ControlPanel characters={characters} onAttack={handleAttack} miss={miss} />
       </header>
 
-      <main className="control-main">
+      <main className="battle-main">
         <div className="layout" >
+        {characters.map(c => {
+          return (
+            <div key={c.name} className="col">
+              <CharacterSheet character={c} target={targetId} />
+            </div>
+          )
+        })}
         </div>
       </main>
     </>
