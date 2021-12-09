@@ -1,4 +1,4 @@
-const getPlayers = () => {
+const getCharacters = () => {
   return [
     {
       id: 1,
@@ -21,7 +21,7 @@ const getPlayers = () => {
     {
       id: 2,
       name: "Romandrian",
-      race: "Dwarf",
+      race: "Half-elf",
       klass: "Barbarian",
       level: 5,
       alignment: "Lawful Neutral",
@@ -57,7 +57,7 @@ const getPlayers = () => {
     {
       id: 4,
       name: "Rikaard",
-      race: "Human",
+      race: "Dwarf",
       klass: "Rogue",
       level: 5,
       alignment: "Chaotic Neutral",
@@ -93,4 +93,4 @@ const getPlayers = () => {
   ];
 };
 
-export { getPlayers }
+export { getCharacters }

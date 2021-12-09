@@ -14,16 +14,27 @@ ul {
   display: flex;
 }
 
-.character-list {
+.layout {
+  display: flex;
+}
+.layout .col {
+  flex: 1 1 0;
+}
+
+.char-sheet {
   flex: 1 1 0;
   border: 1px solid #ddd;
   padding: 1rem;
   margin: 1rem;
 }
 
-.profile-card-section {
+.char-sheet__section {
   border-top: 1px dashed #666;
   margin-top: 2rem;
+}
+
+.char-sheet__target {
+  background-color: yellow;
 }
 
 .attr-card-key {
