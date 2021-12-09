@@ -16,8 +16,16 @@ ul {
   display: flex;
 }
 
+.battle-header {
+  text-align: center;
+}
+.battle-header__heading {
+  width: 100%;
+}
+
 .layout {
   display: flex;
+  width: 100%;
 }
 .layout .col {
   flex: 1 1 0;
@@ -58,24 +66,10 @@ ul {
   margin-top: 2rem;
 }
 
-.char-sheet__target {
-  background-color: yellow;
-}
-
 .attr-card-key {
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-}
-
-.control-panel {
-  display: flex;
-  margin: 0 auto;
-}
-.control-panel-alert {
-  flex: 1 1 50%;
-  background-color: #f00;
-  color: #fff;
 }
 
 .alignment {
