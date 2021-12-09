@@ -2,7 +2,13 @@ import Attributes from './Attributes'
 
 /* This is a state-less component */
 function CharacterSheet({ character, onAttack, showAttributes  }) {
+  
+  /* Getting character from props instead of state */
   const { name, race, klass, attrs, alignment, hp } = character;
+  
+  const handleClick = (e) => {
+    onAttack(character.id)
+  };
 
   return (
     <div className="char-sheet">
@@ -33,7 +39,7 @@ function CharacterSheet({ character, onAttack, showAttributes  }) {
       </section>
       ) : null}
       <footer className="char-sheet__controls">
-        {hp > 0 ? <button className="button button__attack" onClick={() => onAttack(character.id)}>Attack</button> : null}
+        {hp > 0 ? <button className="button button__attack" onClick={handleClick}>Attack</button> : null}
       </footer>
     </div>
   )
