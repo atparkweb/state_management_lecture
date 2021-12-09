@@ -17,7 +17,11 @@ function CharacterSheet({ character, withAttributes }) {
       <section className="char-sheet__section">
         <h2>Status</h2>
         <ul>
-          <li><abbr title="Health Points">HP</abbr>: {hp}</li>
+          <li>
+            { hp > 0
+            ? <><abbr title="Health Points">HP</abbr>: {hp}</>
+            : "💀" }
+          </li>
         </ul>
       </section>
 
