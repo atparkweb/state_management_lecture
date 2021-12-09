@@ -39,6 +39,10 @@ ul {
   text-align: center;
 }
 
+.char-sheet__dead {
+  opacity: 0.3;
+}
+
 .char-sheet__icon {
   width: 120px;
   height: 120px;

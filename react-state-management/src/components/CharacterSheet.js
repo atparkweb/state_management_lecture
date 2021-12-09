@@ -1,4 +1,5 @@
-import Attributes from './Attributes'
+import { useEffect, useState } from 'react';
+import Attributes from './Attributes';
 
 /* This is a state-less component */
 function CharacterSheet({ character, onAttack, showAttributes  }) {
@@ -6,12 +7,20 @@ function CharacterSheet({ character, onAttack, showAttributes  }) {
   /* Getting character from props instead of state */
   const { name, race, klass, attrs, alignment, hp } = character;
   
+  const [isDead, setIsDead] = useState(false);
+  
+  useEffect(() => {
+    if (hp <= 0) {
+      setIsDead(true);
+    }
+  }, [hp]);
+  
   const handleClick = (e) => {
     onAttack(character.id)
   };
 
   return (
-    <div className="char-sheet">
+    <div className={ isDead ? "char-sheet char-sheet__dead" : "char-sheet" }>
       <header>
         <h1>{name}</h1>
         <div className={`char-sheet__icon ${klass.toLowerCase()}`}></div>
