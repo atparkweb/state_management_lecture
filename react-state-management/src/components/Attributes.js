@@ -1,13 +1,4 @@
-const getAttributes = () => {
-  return {
-    str: "strength",
-    int: "intelligence",
-    con: "constitution",
-    wis: "wisdom",
-    dex: "dexterity",
-    cha: "charisma"
-  };
-};
+import { getAttributes } from '../data/attributes';
 
 /* this is a state-less component */
 function Attributes({ attributes }) {

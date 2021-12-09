@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import Attributes from './Attributes';
 
-/* This is a state-less component */
 function CharacterSheet({ character, onAttack, showAttributes  }) {
   
   /* Getting character from props instead of state */
   const { name, race, klass, attrs, alignment, hp } = character;
   
+  /* This is local state for the component display only */
   const [isDead, setIsDead] = useState(false);
   
   useEffect(() => {
