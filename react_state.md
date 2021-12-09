@@ -10,6 +10,7 @@ isn’t used by the parent component itself and isn’t shared across multiple c
 Lifting state should be used to give components access to only the state they need.
 
 ## Setting State
-Set state functions from `useState` are asynchronous operations in React. This is fine for scalar values but what about objects?
+Set state functions from `useState` are asynchronous operations in React.
+This can become problematic when many state changes occur, especially when objects are being changed.
 
-If the properties being set are stale, this could lead to bugs.
+If state objects are stale, this could lead to hard to find bugs.
