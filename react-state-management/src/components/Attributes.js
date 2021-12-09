@@ -2,7 +2,7 @@ import { getAttributes } from '../data/attributes';
 
 /* this is a state-less component */
 function Attributes({ attributes }) {
-  function attributeItems(attrs) {
+  const attributeItems = (attrs) => {
     let content = [];
     const attributes = getAttributes();
   
