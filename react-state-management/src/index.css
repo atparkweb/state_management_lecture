@@ -28,6 +28,29 @@ ul {
   border: 1px solid #ddd;
   padding: 1rem;
   margin: 1rem;
+  text-align: center;
+}
+
+.char-sheet__icon {
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  margin: 1rem auto;
+}
+.char-sheet__icon.rogue {
+  background-image: url("./assets/rogue.jpeg");
+}
+.char-sheet__icon.cleric {
+  background-image: url("./assets/cleric.jpeg");
+}
+.char-sheet__icon.sorcerer {
+  background-image: url("./assets/sorcerer.jpeg");
+}
+.char-sheet__icon.warlock {
+  background-image: url("./assets/warlock.jpeg");
+}
+.char-sheet__icon.paladin {
+  background-image: url("./assets/paladin.jpeg");
 }
 
 .char-sheet__section {
@@ -56,5 +79,5 @@ ul {
 }
 
 .alignment {
-  font-size: 0.5rem;
+  font-size: 0.75rem;
 }
