@@ -38,7 +38,7 @@ const getCharacters = () => {
     },
     {
       id: 3,
-      name: "Analala",
+      name: "Anakhara",
       race: "Elf",
       klass: "Cleric",
       level: 5,
