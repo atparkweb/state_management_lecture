@@ -81,7 +81,7 @@ ul {
 }
 
 .button {
-  background: none;
+  background-color: transparent;
   border: 1px solid #eee;
   color: #fff;
   cursor: pointer;
@@ -89,4 +89,18 @@ ul {
   padding: 0.5rem 2rem;
   text-align: center;
   width: 100%;
+}
+
+@keyframes attack {
+  from {
+    background-color: rgba(255, 0, 0, 1);
+  }
+  to {
+    background-color: rgba(255, 0, 0, 0);
+  }
+}
+
+.button__attack:active {
+  animation-duration: 1s;
+  animation-name: attack;
 }
