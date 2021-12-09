@@ -22,11 +22,11 @@ const getCharacters = () => {
       id: 2,
       name: "Romandrian",
       race: "Half-elf",
-      klass: "Barbarian",
+      klass: "Paladin",
       level: 5,
       alignment: "Lawful Neutral",
       background: "Soldier",
-      hp: 30,
+      hp: 20,
       attrs: {
         str: { value: 18, mod: 2 },
         int: { value: 10, mod: 0 },
@@ -80,7 +80,7 @@ const getCharacters = () => {
       level: 5,
       alignment: "Lawful Evil",
       background: "Criminal",
-      hp: 12,
+      hp: 10,
       attrs: {
         str: { value: 8, mod: 0 },
         int: { value: 18, mod: 2 },
