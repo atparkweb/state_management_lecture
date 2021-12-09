@@ -32,6 +32,9 @@ function CharacterSheet({ character, withAttributes }) {
         <Attributes attributes={attrs} />
       </section>
       ) : null}
+      <footer className="char-sheet__controls">
+        <button className="button">Attack</button>
+      </footer>
     </div>
   )
 }
