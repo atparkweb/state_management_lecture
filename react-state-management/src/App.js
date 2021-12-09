@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Character from "./components/Character";
+import CharacterSheet from "./components/CharacterSheet";
 import ControlPanel from "./components/ControlPanel";
 import { getPlayers } from './data/players';
 
@@ -39,7 +39,7 @@ function App() {
         {playerList.map(p => {
           return (
             <div className="character-list" key={p.name}>
-              <Character data={p} />
+              <CharacterSheet character={p} />
             </div>
           )
         })}

@@ -9,23 +9,24 @@ const getAttributes = () => {
   };
 };
 
-function attributeItems(attrs) {
-  let content = [];
-  const attributes = getAttributes();
-
-  for (const key in attributes) {
-    content.push(
-      <li key={key} className="attr-card-item">
-        <abbr title={attributes[key]} className="attr-card-key">{key}: </abbr>
-        <span className="attr-card-value">{attrs[key].value} ({attrs[key].mod})</span>
-      </li>
-    )
+/* this is a state-less component */
+function Attributes({ attributes }) {
+  function attributeItems(attrs) {
+    let content = [];
+    const attributes = getAttributes();
+  
+    for (const key in attributes) {
+      content.push(
+        <li key={key} className="attr-card-item">
+          <abbr title={attributes[key]} className="attr-card-key">{key}: </abbr>
+          <span className="attr-card-value">{attrs[key].value} ({attrs[key].mod})</span>
+        </li>
+      )
+    }
+  
+    return content;
   }
 
-  return content;
-}
-
-function Attributes({ attributes }) {
   return (
     <div className="attr-card">
       <ul>{attributeItems(attributes)}</ul>
