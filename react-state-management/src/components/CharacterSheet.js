@@ -1,10 +1,11 @@
 import Attributes from './Attributes'
 
-function Character({ data }) {
-  const { name, race, klass, attrs, alignment, background, level, hp } = data;
+/* This is a state-less component */
+function CharacterSheet({ character }) {
+  const { name, race, klass, attrs, alignment, level, hp } = character;
 
   return (
-    <div className="profile-card">
+    <div className="char-sheet">
       <header>
         <h1>{name}</h1>
         <ul>
@@ -14,14 +15,14 @@ function Character({ data }) {
         </ul>
       </header>
 
-      <section className="profile-card-section">
+      <section className="char-sheet__section">
         <h2>Status</h2>
         <ul>
           <li><abbr title="Health Points">HP</abbr>: {hp}</li>
         </ul>
       </section>
 
-      <section className="profile-card-section">
+      <section className="char-sheet__section">
         <h2>Attributes</h2>
         <Attributes attributes={attrs} />
       </section>
@@ -29,4 +30,4 @@ function Character({ data }) {
   )
 }
 
-export default Character
+export default CharacterSheet
