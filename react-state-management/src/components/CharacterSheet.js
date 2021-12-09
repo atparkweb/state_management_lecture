@@ -1,7 +1,7 @@
 import Attributes from './Attributes'
 
 /* This is a state-less component */
-function CharacterSheet({ character }) {
+function CharacterSheet({ character, withAttributes }) {
   const { name, race, klass, attrs, alignment, level, hp } = character;
 
   return (
@@ -22,10 +22,12 @@ function CharacterSheet({ character }) {
         </ul>
       </section>
 
+      {withAttributes ? (
       <section className="char-sheet__section">
         <h2>Attributes</h2>
         <Attributes attributes={attrs} />
       </section>
+      ) : null}
     </div>
   )
 }

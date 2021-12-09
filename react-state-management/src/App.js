@@ -1,48 +1,48 @@
 import { useState } from "react";
 import CharacterSheet from "./components/CharacterSheet";
 import ControlPanel from "./components/ControlPanel";
-import { getPlayers } from './data/players';
+import { getCharacters } from './data/characters';
 
 function App() {
-  const [playerList, setPlayerList] = useState(getPlayers());
+  const [characters, setCharacters] = useState(getCharacters());
   const [miss, setMiss] = useState(false);
+  const [targetId, setTargetId] = useState(1);
 
-  const handleAttack = (playerId) => {
-    const newList = playerList.map(p => {
-      if (p.id === playerId) {
+  const handleAttack = (targetId) => {
+    setTargetId(targetId);
+    const newCharacters = characters.map(c => {
+      if (c.id === targetId) {
         const damage = Math.round(Math.random());
 
         if (damage === 0) {
           setMiss(true);
           setTimeout(() => setMiss(false), 500);
         } else {
-          p.hp -= damage;
+          c.hp -= damage;
         }
       }
-      return p;
+      return c;
     });
 
-    setPlayerList(newList);
-  };
-
-  const handleRemove = (player) => {
-    // TODO: Implement
+    setCharacters(newCharacters);
   };
 
   return (
     <div className="app">
       <header className="app-header">
-        <ControlPanel players={playerList} onAttack={handleAttack} onRemove={handleRemove} miss={miss} />
+        <ControlPanel characters={characters} onAttack={handleAttack} miss={miss} />
       </header>
 
       <main className="app-main">
-        {playerList.map(p => {
+        <div className="layout" >
+        {characters.map(c => {
           return (
-            <div className="character-list" key={p.name}>
-              <CharacterSheet character={p} />
+            <div key={c.name} className="col">
+              <CharacterSheet character={c} target={targetId} />
             </div>
           )
         })}
+        </div>
       </main>
     </div>
   );

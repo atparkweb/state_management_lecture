@@ -1,21 +1,21 @@
 import { useState } from "react";
 
-function ControlPanel({ players, onAttack, miss }) {
-  const [selectedPlayer, setSelectedPlayer] = useState(players[0].id);
+function ControlPanel({ characters, onAttack, miss }) {
+  const [target, setTarget] = useState(characters[0].id);
 
   const handleClick = (e) => {
-    onAttack(selectedPlayer);
+    onAttack(target);
   };
 
   const handleChange = (e) => {
-    setSelectedPlayer(parseInt(e.target.value));
+    setTarget(parseInt(e.target.value));
   };
 
   return (
     <div className="control-panel">
       <select onChange={handleChange}>
-        {players.map(p => {
-          return <option key={p.id} value={p.id}>{p.name}</option>
+        {characters.map(c => {
+          return <option key={c.id} value={c.id}>{c.name}</option>
         })}
       </select>
       <button onClick={handleClick} disabled={miss}>Attack</button>
