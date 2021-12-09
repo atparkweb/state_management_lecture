@@ -20,11 +20,11 @@ const getCharacters = () => {
     },
     {
       id: 2,
-      name: "Romandrian",
+      name: "Romandor",
       race: "Half-elf",
       klass: "Paladin",
       level: 5,
-      alignment: "Lawful Neutral",
+      alignment: "Chaotic Good",
       background: "Soldier",
       hp: 20,
       attrs: {
