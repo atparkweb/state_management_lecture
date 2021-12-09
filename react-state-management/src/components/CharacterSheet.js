@@ -2,16 +2,15 @@ import Attributes from './Attributes'
 
 /* This is a state-less component */
 function CharacterSheet({ character, withAttributes }) {
-  const { name, race, klass, attrs, alignment, level, hp } = character;
+  const { name, race, klass, attrs, alignment, hp } = character;
 
   return (
     <div className="char-sheet">
       <header>
         <h1>{name}</h1>
         <ul>
-          <li>{race}</li>
-          <li>{klass} {level}</li>
-          <li>{alignment}</li>
+          <li>{race} {klass}</li>
+          <li><span className="alignment">{alignment}</span></li>
         </ul>
       </header>
 

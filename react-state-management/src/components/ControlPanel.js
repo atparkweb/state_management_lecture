@@ -18,10 +18,11 @@ function ControlPanel({ characters, onAttack, miss }) {
           return <option key={c.id} value={c.id}>{c.name}</option>
         })}
       </select>
-      <button onClick={handleClick} disabled={miss}>Attack</button>
-      <div className="control-panel-alert">
-        {miss ? <span>MISSED!</span> : null}
-      </div>
+
+      {miss
+         ? <div className="control-panel-alert">MISSED!</div>
+         : <button onClick={handleClick} disabled={miss}>Attack</button>
+      }
     </div>
   )
 }
