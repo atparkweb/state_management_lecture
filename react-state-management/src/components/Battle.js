@@ -8,7 +8,7 @@ function Battle() {
   const handleAttack = (id) => {
     const newCharacters = characters.map(c => {
       if (c.id === id) {
-	c.hp -= Math.round(Math.random() * 6);
+        c.hp -= Math.round(Math.random() * 6);
       }
       
       return c;
