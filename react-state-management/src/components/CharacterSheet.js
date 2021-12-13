@@ -17,7 +17,7 @@ function CharacterSheet({ character, isTarget, onClick, showAttributes}) {
   
   return (
     <div className={ isDead ? "char-sheet char-sheet__dead" : "char-sheet" } onClick={() => onClick(id)}>
-      <header className={ isTarget ? "header__target" : "" }>
+      <header className={ isTarget ? "header header__target" : "header" }>
         <h1>{name}</h1>
         <div className={`char-sheet__icon ${klass.toLowerCase()}`}></div>
         <ul>
