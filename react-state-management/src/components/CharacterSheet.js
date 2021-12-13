@@ -1,4 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useReducer } from 'react';
+import { initState } from '../store';
+import actions from '../store/actions';
+import { reducer } from '../store/reducers';
 import Attributes from './Attributes';
 
 function CharacterSheet({ character, target, onClick, showAttributes}) {
