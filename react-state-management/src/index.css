@@ -39,6 +39,20 @@ ul {
   margin: 1rem;
   text-align: center;
 }
+.char-sheet .header {
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  padding-bottom: 1rem;
+}
+.char-sheet .header__target {
+  border-top: 4px solid #f00;
+  border-bottom: 4px solid #f00;
+}
+.char-sheet__dead .header {
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
 
 .char-sheet__dead {
   opacity: 0.3;
@@ -87,10 +101,6 @@ ul {
 
 .control-panel {
   width: 100%;
-}
-
-.header__target {
-  background-color: yellow;
 }
 
 .button {
