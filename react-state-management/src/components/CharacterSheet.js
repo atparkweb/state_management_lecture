@@ -1,7 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useReducer } from 'react';
+import { initState } from '../store';
+import actions from '../store/actions';
+import { reducer } from '../store/reducers';
 import Attributes from './Attributes';
 
-function CharacterSheet({ character, isTarget, onClick, showAttributes}) {
+function CharacterSheet({ character, showAttributes}) {
+  const [state, dispatch] = useReducer(reducer, initState());
   
   /* Getting character from props instead of state */
   const { id, name, race, klass, attrs, alignment, hp } = character;
@@ -14,10 +18,14 @@ function CharacterSheet({ character, isTarget, onClick, showAttributes}) {
       setIsDead(true);
     }
   }, [hp]);
-  
+
+  const handleClick = () => {
+    dispatch({ type: actions.TARGET_ON, payload: id })
+  };
+
   return (
-    <div className={ isDead ? "char-sheet char-sheet__dead" : "char-sheet" } onClick={() => onClick(id)}>
-      <header className={ isTarget ? "header header__target" : "header" }>
+    <div className={ isDead ? "char-sheet char-sheet__dead" : "char-sheet" } onClick={handleClick}>
+      <header className={ state.target === id ? "header header__target" : "header" }>
         <h1>{name}</h1>
         <div className={`char-sheet__icon ${klass.toLowerCase()}`}></div>
         <ul>

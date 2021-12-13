@@ -1,31 +1,16 @@
-import { useState } from "react";
-import { getCharacters } from "../data/characters";
+import { useReducer } from "react";
+import { reducer } from "../store/reducers";
+import actions from "../store/actions";
 import CharacterSheet from "./CharacterSheet";
 import ControlPanel from "./ControlPanel";
+import { initState } from "../store";
 
 function Battle() {
-  const [characters, setCharacters] = useState(getCharacters());
-  const [target, setTarget] = useState();
+  const [state, dispatch] = useReducer(reducer, initState());
 
   const handleAttack = () => {
-    if (target) {
-      const newCharacters = characters.map(c => {
-        if (c.id === target) {
-          c.hp -= Math.round(Math.random() * 6);
-        }
-        
-        return c;
-      });
-      
-      setCharacters(newCharacters);
-    } else {
-      console.warn("No target selected");
-    }
-  };
-
-  const handleClick = (id) => {
-    console.log(id);
-    setTarget(id);
+    const damage = Math.round(Math.random() * 6);
+    dispatch({ type: actions.ATTACK, payload: damage })
   };
 
   return (
@@ -36,10 +21,10 @@ function Battle() {
 
       <main className="battle-main">
         <div className="layout" >
-        {characters.map(c => {
+        {state.characters.map(c => {
           return (
             <div key={c.name} className="col">
-              <CharacterSheet character={c} isTarget={c.id === target} onClick={handleClick} showAttributes={false} />
+              <CharacterSheet character={c} showAttributes={false} />
             </div>
           )
         })}
