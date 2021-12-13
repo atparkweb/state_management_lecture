@@ -14,6 +14,7 @@ ul {
 .battle-main,
 .battle-header {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .battle-header {
@@ -82,6 +83,14 @@ ul {
 
 .char-sheet__controls {
   margin-top: 2rem;
+}
+
+.control-panel {
+  width: 100%;
+}
+
+.header__target {
+  background-color: yellow;
 }
 
 .button {

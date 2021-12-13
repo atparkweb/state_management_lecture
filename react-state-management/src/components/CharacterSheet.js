@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import Attributes from './Attributes';
 
-function CharacterSheet({ character, onAttack, showAttributes  }) {
+function CharacterSheet({ character, isTarget, onClick, showAttributes}) {
   
   /* Getting character from props instead of state */
-  const { name, race, klass, attrs, alignment, hp } = character;
+  const { id, name, race, klass, attrs, alignment, hp } = character;
   
   /* This is local state for the component display only */
   const [isDead, setIsDead] = useState(false);
@@ -15,13 +15,9 @@ function CharacterSheet({ character, onAttack, showAttributes  }) {
     }
   }, [hp]);
   
-  const handleClick = (e) => {
-    onAttack(character.id)
-  };
-
   return (
-    <div className={ isDead ? "char-sheet char-sheet__dead" : "char-sheet" }>
-      <header>
+    <div className={ isDead ? "char-sheet char-sheet__dead" : "char-sheet" } onClick={() => onClick(id)}>
+      <header className={ isTarget ? "header__target" : "" }>
         <h1>{name}</h1>
         <div className={`char-sheet__icon ${klass.toLowerCase()}`}></div>
         <ul>
@@ -47,9 +43,6 @@ function CharacterSheet({ character, onAttack, showAttributes  }) {
         <Attributes attributes={attrs} />
       </section>
       ) : null}
-      <footer className="char-sheet__controls">
-        {hp > 0 ? <button className="button button__attack" onClick={handleClick}>Attack</button> : null}
-      </footer>
     </div>
   )
 }
