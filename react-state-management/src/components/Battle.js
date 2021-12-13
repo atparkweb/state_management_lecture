@@ -1,20 +1,31 @@
 import { useState } from "react";
 import { getCharacters } from "../data/characters";
 import CharacterSheet from "./CharacterSheet";
+import ControlPanel from "./ControlPanel";
 
 function Battle() {
   const [characters, setCharacters] = useState(getCharacters());
+  const [target, setTarget] = useState();
 
-  const handleAttack = (id) => {
-    const newCharacters = characters.map(c => {
-      if (c.id === id) {
-        c.hp -= Math.round(Math.random() * 6);
-      }
+  const handleAttack = () => {
+    if (target) {
+      const newCharacters = characters.map(c => {
+        if (c.id === target) {
+          c.hp -= Math.round(Math.random() * 6);
+        }
+        
+        return c;
+      });
       
-      return c;
-    });
-    
-    setCharacters(newCharacters);
+      setCharacters(newCharacters);
+    } else {
+      console.warn("No target selected");
+    }
+  };
+
+  const handleClick = (id) => {
+    console.log(id);
+    setTarget(id);
   };
 
   return (
@@ -28,11 +39,12 @@ function Battle() {
         {characters.map(c => {
           return (
             <div key={c.name} className="col">
-              <CharacterSheet character={c} onAttack={handleAttack} showAttributes={false} />
+              <CharacterSheet character={c} isTarget={c.id === target} onClick={handleClick} showAttributes={false} />
             </div>
           )
         })}
         </div>
+        <ControlPanel onAttack={handleAttack} />
       </main>
     </>
   )
