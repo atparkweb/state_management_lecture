@@ -1,17 +1,11 @@
 import { useReducer } from "react";
 import { reducer } from "../store/reducers";
-import actions from "../store/actions";
 import CharacterSheet from "./CharacterSheet";
 import ControlPanel from "./ControlPanel";
 import { initState } from "../store";
 
 function Battle() {
   const [state, dispatch] = useReducer(reducer, initState());
-
-  const handleAttack = () => {
-    const damage = Math.round(Math.random() * 6);
-    dispatch({ type: actions.ATTACK, payload: damage })
-  };
 
   return (
     <>
@@ -29,7 +23,7 @@ function Battle() {
           )
         })}
         </div>
-        <ControlPanel onAttack={handleAttack} />
+        <ControlPanel />
       </main>
     </>
   )
