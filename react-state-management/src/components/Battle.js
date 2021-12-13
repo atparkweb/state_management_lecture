@@ -33,7 +33,7 @@ function Battle() {
           )
         })}
         </div>
-        <ControlPanel onAttack={handleAttack} />
+        <ControlPanel />
       </main>
     </>
   )
