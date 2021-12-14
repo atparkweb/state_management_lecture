@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { targetOn } from "../store/targetSlice";
 import Attributes from "./Attributes";
 
-function CharacterSheet({ character, isTarget, onClick, showAttributes}) {
-
-  /* Getting character from props instead of state */
+function CharacterSheet({ character, showAttributes}) {
   const { id, name, race, jobClass, attributes, alignment, hitPoints } = character;
 
-  /* This is local state for the component display only */
   const [isDead, setIsDead] = useState(false);
+
+  const target = useSelector(state => state.target.value);
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(targetOn(id));
+  };
 
   useEffect(() => {
     if (hitPoints <= 0) {
@@ -16,8 +22,8 @@ function CharacterSheet({ character, isTarget, onClick, showAttributes}) {
   }, [hitPoints]);
 
   return (
-    <div className={isDead ? "char-sheet char-sheet__dead" : "char-sheet" } onClick={() => onClick(id)}>
-      <header className={isTarget ? "header header__target" : "header"}>
+    <div className={isDead ? "char-sheet char-sheet__dead" : "char-sheet"} onClick={handleClick}>
+      <header className={id === target ? "header header__target" : "header"}>
         <h1>{name}</h1>
         <div className={`char-sheet__icon ${jobClass.toLowerCase()}`}></div>
         <ul>
