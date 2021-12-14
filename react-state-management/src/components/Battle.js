@@ -1,31 +1,25 @@
-import { useState } from "react";
-import { getCharacters } from "../data/characters";
+import { useDispatch, useSelector } from "react-redux";
+import { attack } from "../store/charactersSlice";
+import { targetOn } from "../store/targetSlice";
 import CharacterSheet from "./CharacterSheet";
 import ControlPanel from "./ControlPanel";
 
 function Battle() {
-  const [characters, setCharacters] = useState(getCharacters());
-  const [target, setTarget] = useState();
+  const characters = useSelector(state => state.characters.value);
+  const target = useSelector(state => state.target.value);
+
+  const dispatch = useDispatch();
 
   const handleAttack = () => {
     if (target) {
-      const newCharacters = characters.map(c => {
-        if (c.id === target) {
-          c.hp -= Math.round(Math.random() * 6);
-        }
-        
-        return c;
-      });
-      
-      setCharacters(newCharacters);
+      dispatch(attack(target));
     } else {
       console.warn("No target selected");
     }
   };
 
   const handleClick = (id) => {
-    console.log(id);
-    setTarget(id);
+    dispatch(targetOn(id));
   };
 
   return (
