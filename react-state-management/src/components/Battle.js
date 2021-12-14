@@ -1,26 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
-import { attack } from "../store/charactersSlice";
-import { targetOn } from "../store/targetSlice";
+import { useSelector } from "react-redux";
 import CharacterSheet from "./CharacterSheet";
 import ControlPanel from "./ControlPanel";
 
 function Battle() {
   const characters = useSelector(state => state.characters.value);
-  const target = useSelector(state => state.target.value);
-
-  const dispatch = useDispatch();
-
-  const handleAttack = () => {
-    if (target) {
-      dispatch(attack(target));
-    } else {
-      console.warn("No target selected");
-    }
-  };
-
-  const handleClick = (id) => {
-    dispatch(targetOn(id));
-  };
 
   return (
     <>
@@ -38,7 +21,7 @@ function Battle() {
           );
         })}
         </div>
-        <ControlPanel onAttack={handleAttack} />
+        <ControlPanel />
       </main>
     </>
   );
