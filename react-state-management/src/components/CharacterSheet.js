@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import Attributes from './Attributes';
+import { useEffect, useState } from "react";
+import Attributes from "./Attributes";
 
 function CharacterSheet({ character, target, onClick, showAttributes}) {
   /* Getting character from props instead of state */
@@ -30,9 +30,9 @@ function CharacterSheet({ character, target, onClick, showAttributes}) {
         <h2>Status</h2>
         <ul>
           <li>
-            { hp > 0
+            {hp > 0
             ? <><abbr title="Health Points">HP</abbr>: {hp}</>
-            : "💀" }
+            : "💀"}
           </li>
         </ul>
       </section>
@@ -44,7 +44,7 @@ function CharacterSheet({ character, target, onClick, showAttributes}) {
       </section>
       ) : null}
     </div>
-  )
+  );
 }
 
-export default CharacterSheet
+export default CharacterSheet;

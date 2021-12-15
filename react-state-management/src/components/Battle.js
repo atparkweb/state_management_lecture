@@ -30,13 +30,13 @@ function Battle() {
             <div key={c.name} className="col">
               <CharacterSheet character={c} target={state.target} onClick={handleClick} showAttributes={false} />
             </div>
-          )
+          );
         })}
         </div>
         <ControlPanel onAttack={handleAttack} />
       </main>
     </>
-  )
+  );
 }
 
 export default Battle;
