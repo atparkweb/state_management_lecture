@@ -41,7 +41,7 @@ function Battle() {
         <ControlPanel onAttack={handleAttack} />
       </main>
     </>
-  )
+  );
 }
 
 export default Battle;
