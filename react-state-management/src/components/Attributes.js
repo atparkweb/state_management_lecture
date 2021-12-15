@@ -1,4 +1,4 @@
-import { getAttributes } from '../data/attributes';
+import { getAttributes } from "../data/attributes";
 
 /* this is a state-less component */
 function Attributes({ attributes }) {

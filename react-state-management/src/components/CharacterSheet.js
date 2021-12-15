@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import Attributes from './Attributes';
+import { useEffect, useState } from "react";
+import Attributes from "./Attributes";
 
 function CharacterSheet({ character, isTarget, onClick, showAttributes}) {
   
@@ -16,8 +16,8 @@ function CharacterSheet({ character, isTarget, onClick, showAttributes}) {
   }, [hp]);
   
   return (
-    <div className={ isDead ? "char-sheet char-sheet__dead" : "char-sheet" } onClick={() => onClick(id)}>
-      <header className={ isTarget ? "header header__target" : "header" }>
+    <div className={isDead ? "char-sheet char-sheet__dead" : "char-sheet" } onClick={() => onClick(id)}>
+      <header className={isTarget ? "header header__target" : "header"}>
         <h1>{name}</h1>
         <div className={`char-sheet__icon ${klass.toLowerCase()}`}></div>
         <ul>
@@ -30,9 +30,9 @@ function CharacterSheet({ character, isTarget, onClick, showAttributes}) {
         <h2>Status</h2>
         <ul>
           <li>
-            { hp > 0
+            {hp > 0
             ? <><abbr title="Health Points">HP</abbr>: {hp}</>
-            : "💀" }
+            : "💀"}
           </li>
         </ul>
       </section>
@@ -47,4 +47,4 @@ function CharacterSheet({ character, isTarget, onClick, showAttributes}) {
   )
 }
 
-export default CharacterSheet
+export default CharacterSheet;
