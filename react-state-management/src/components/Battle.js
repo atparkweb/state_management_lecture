@@ -9,14 +9,14 @@ function Battle() {
 
   const handleAttack = () => {
     if (target) {
-      const newCharacters = characters.map(c => {
-        if (c.id === target) {
-          c.hp -= Math.round(Math.random() * 6);
+      const newCharacters = characters.map(character => {
+        if (character.id === target) {
+          character.hitPoints -= Math.round(Math.random() * 6);
         }
-        
-        return c;
+
+        return character;
       });
-      
+
       setCharacters(newCharacters);
     } else {
       console.warn("No target selected");
@@ -24,7 +24,6 @@ function Battle() {
   };
 
   const handleClick = (id) => {
-    console.log(id);
     setTarget(id);
   };
 
@@ -36,12 +35,12 @@ function Battle() {
 
       <main className="battle-main">
         <div className="layout" >
-        {characters.map(c => {
+        {characters.map(character => {
           return (
-            <div key={c.name} className="col">
-              <CharacterSheet character={c} isTarget={c.id === target} onClick={handleClick} showAttributes={false} />
+            <div key={character.name} className="col">
+              <CharacterSheet character={character} isTarget={character.id === target} onClick={handleClick} showAttributes={false} />
             </div>
-          )
+          );
         })}
         </div>
         <ControlPanel onAttack={handleAttack} />
