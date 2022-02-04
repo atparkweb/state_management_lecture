@@ -13,12 +13,12 @@ function Battle() {
 
       <main className="battle-main">
         <div className="layout" >
-        {characters.map(c => {
+        {characters.map(character => {
           return (
-            <div key={c.name} className="col">
-              <CharacterSheet character={c} showAttributes={false} />
+            <div key={character.name} className="col">
+              <CharacterSheet character={character} showAttributes={false} />
             </div>
-          )
+          );
         })}
         </div>
         <ControlPanel />

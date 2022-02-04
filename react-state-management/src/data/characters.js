@@ -2,92 +2,92 @@ const getCharacters = () => {
   return [
     {
       id: 1,
-      name: "Briandalf",
-      race: "Half-orc",
-      klass: "Sorcerer",
-      level: 5,
-      alignment: "Chaotic Evil",
-      background: "Hermit",
-      hp: 12,
-      attrs: {
-        str: { value: 8, mod: 0 },
-        int: { value: 15, mod: 1 },
-        wis: { value: 14, mod: 0 },
-        dex: { value: 4, mod: -1 },
-        cha: { value: 8, mod: 0 },
-        con: { value: 10, mod: 0 }
+      name: "Trougar",
+      race: "Dragonborn",
+      jobClass: "Bard",
+      level: 1,
+      alignment: "Chaotic Good",
+      background: "Far Traveler",
+      hitPoints: 12,
+      attributes: {
+        strength: { value: 8, mod: 0 },
+        intelligence: { value: 15, mod: 1 },
+        wisdom: { value: 14, mod: 0 },
+        dexterity: { value: 4, mod: -1 },
+        charisma: { value: 8, mod: 0 },
+        constitution: { value: 10, mod: 0 }
       },
     },
     {
       id: 2,
-      name: "Romandor",
+      name: "Swan",
       race: "Half-elf",
-      klass: "Paladin",
-      level: 5,
-      alignment: "Chaotic Good",
-      background: "Soldier",
-      hp: 20,
-      attrs: {
-        str: { value: 18, mod: 2 },
-        int: { value: 10, mod: 0 },
-        wis: { value: 8, mod: 0 },
-        dex: { value: 8, mod: 0 },
-        cha: { value: 10, mod: 0 },
-        con: { value: 13, mod: 1 }
+      jobClass: "Paladin",
+      level: 1,
+      alignment: "Lawful Good",
+      background: "Acolyte",
+      hitPoints: 20,
+      attributes: {
+        strength: { value: 18, mod: 2 },
+        intelligence: { value: 10, mod: 0 },
+        wisdom: { value: 8, mod: 0 },
+        dexterity: { value: 8, mod: 0 },
+        charisma: { value: 10, mod: 0 },
+        constitution: { value: 13, mod: 1 }
       },
     },
     {
       id: 3,
-      name: "Anakhara",
-      race: "Elf",
-      klass: "Cleric",
-      level: 5,
-      alignment: "Lawful Good",
-      background: "Noble",
-      hp: 14,
-      attrs: {
-        str: { value: 8, mod: 0 },
-        int: { value: 15, mod: 1 },
-        wis: { value: 12, mod: 1 },
-        dex: { value: 8, mod: 0 },
-        cha: { value: 17, mod: 2 },
-        con: { value: 11, mod: 0 }
+      name: "Balto",
+      race: "Gnome",
+      jobClass: "Wizard",
+      level: 1,
+      alignment: "Neutral Good",
+      background: "Folk Hero",
+      hitPoints: 14,
+      attributes: {
+        strength: { value: 8, mod: 0 },
+        intelligence: { value: 15, mod: 1 },
+        wisdom: { value: 12, mod: 1 },
+        dexterity: { value: 8, mod: 0 },
+        charisma: { value: 17, mod: 2 },
+        constitution: { value: 11, mod: 0 }
       }
     },
     {
       id: 4,
-      name: "Rikaard",
+      name: "Thorin",
       race: "Dwarf",
-      klass: "Rogue",
-      level: 5,
-      alignment: "Chaotic Neutral",
-      background: "Bounty Hunter",
-      hp: 16,
-      attrs: {
-        str: { value: 11, mod: 0 },
-        int: { value: 8, mod: 0 },
-        wis: { value: 5, mod: -1 },
-        dex: { value: 16, mod: 2 },
-        cha: { value: 14, mod: 0 },
-        con: { value: 9, mod: 0 }
+      jobClass: "Druid",
+      level: 1,
+      alignment: "Neutral",
+      background: "Hermit",
+      hitPoints: 16,
+      attributes: {
+        strength: { value: 11, mod: 0 },
+        intelligence: { value: 8, mod: 0 },
+        wisdom: { value: 5, mod: -1 },
+        dexterity: { value: 16, mod: 2 },
+        charisma: { value: 14, mod: 0 },
+        constitution: { value: 9, mod: 0 }
       }
     },
     {
       id: 5,
-      name: "Wesleorg",
-      race: "Gnome",
-      klass: "Warlock",
-      level: 5,
+      name: "Hron",
+      race: "Human",
+      jobClass: "Rogue",
+      level: 1,
       alignment: "Lawful Evil",
       background: "Criminal",
-      hp: 10,
-      attrs: {
-        str: { value: 8, mod: 0 },
-        int: { value: 18, mod: 2 },
-        wis: { value: 8, mod: 0 },
-        dex: { value: 10, mod: 0 },
-        cha: { value: 7, mod: -1 },
-        con: { value: 9, mod: 0 }
+      hitPoints: 10,
+      attributes: {
+        strength: { value: 8, mod: 0 },
+        intelligence: { value: 18, mod: 2 },
+        wisdom: { value: 8, mod: 0 },
+        dexterity: { value: 10, mod: 0 },
+        charisma: { value: 7, mod: -1 },
+        constitution: { value: 9, mod: 0 }
       }
     }
   ];

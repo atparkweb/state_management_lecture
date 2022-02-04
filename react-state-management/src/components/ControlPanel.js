@@ -18,7 +18,7 @@ function ControlPanel() {
     <div className="control-panel">
       <button className="button control-panel__button" onClick={handleAttack}>Attack</button>
     </div>
-  )
+  );
 }
 
 export default ControlPanel;
