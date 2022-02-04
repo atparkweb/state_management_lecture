@@ -66,6 +66,9 @@ ul {
 .char-sheet__icon.rogue {
   background-image: url("./assets/rogue.jpeg");
 }
+.char-sheet__icon.bard {
+  background-image: url("./assets/bard.jpeg");
+}
 .char-sheet__icon.cleric {
   background-image: url("./assets/cleric.jpeg");
 }
@@ -74,6 +77,12 @@ ul {
 }
 .char-sheet__icon.warlock {
   background-image: url("./assets/warlock.jpeg");
+}
+.char-sheet__icon.druid {
+  background-image: url("./assets/druid.jpeg");
+}
+.char-sheet__icon.wizard {
+  background-image: url("./assets/wizard.jpeg");
 }
 .char-sheet__icon.paladin {
   background-image: url("./assets/paladin.jpeg");
