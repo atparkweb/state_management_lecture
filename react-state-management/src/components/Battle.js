@@ -16,7 +16,7 @@ function Battle() {
         {characters.map(character => {
           return (
             <div key={character.name} className="col">
-              <CharacterSheet character={character} isTarget={character.id === target} onClick={handleClick} showAttributes={false} />
+              <CharacterSheet character={character} showAttributes={false} />
             </div>
           );
         })}

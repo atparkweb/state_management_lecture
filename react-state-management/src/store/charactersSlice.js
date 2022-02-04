@@ -8,21 +8,21 @@ export const charactersSlice = createSlice({
   },
   reducers: {
     attack: (state, action) => {
-      state.value = state.value.map(c => {
-        if (c.id === action.payload) {
-          c.hp -= Math.round(Math.random() * 6);
+      state.value = state.value.map(character => {
+        if (character.id === action.payload) {
+          character.hitPoints -= Math.round(Math.random() * 6);
         }
-        
-        return c;
+
+        return character;
       });
     },
     heal: (state, action) => { // TODO: demonstrate action creators
-      state.value = state.value.map(c => {
-        if (c.id === action.payload) {
-          c.hp += Math.round(Math.random() * 6);
+      state.value = state.value.map(character => {
+        if (character.id === action.payload) {
+          character.hitPoints += Math.round(Math.random() * 6);
         }
-        
-        return c;
+
+        return character;
       });
     }
   }

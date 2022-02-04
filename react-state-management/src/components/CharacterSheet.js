@@ -37,7 +37,7 @@ function CharacterSheet({ character, showAttributes}) {
         <ul>
           <li>
             {hitPoints > 0
-            ? <><abbr title="Health Points">HP</abbr>: {hitPoints}</>
+            ? <><abbr title="Hit Points">HP</abbr>: {hitPoints}</>
             : "💀"}
           </li>
         </ul>
