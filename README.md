@@ -1,5 +1,10 @@
 # Introduction to Front-End State Management
 
+This repository is used to demonstrate state management in React using Redux. Each branch is a different refactor of the project. The master branch relies on local component state while other branchs gradually build a global state tree:
+1. `with-reducers`
+2. `with-redux`
+3. `with-redux-refactor`
+
 ---
 
 ## What problems do state management solve?
