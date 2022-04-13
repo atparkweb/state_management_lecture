@@ -7,7 +7,7 @@ This repository is used to demonstrate state management in React using Redux. Ea
 
 ---
 
-## What problems do state management solve?
+## What problem does state management solve?
 
 ---
 
