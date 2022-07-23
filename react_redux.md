@@ -54,7 +54,7 @@ So let's call this a *Reducer*.
 There is a React hook called `useReducer` that let's us create functions inside our components to safely update state.
 
 **Warning** If the Context data changes frequently, it may trigger unnecessary re-renders in the component tree, since
-state is still passed down to all components. It's kind of sneaking it's way down through all the components.
+state is still passed down to all components. It's kind of sneaking its way down through all the components.
 
 So is there a better solution?
 
