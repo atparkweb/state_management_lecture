@@ -61,7 +61,8 @@ So is there a better solution?
 ## State Management: Redux
 Redux solves the problems of stateful components by moving shared state to a global store which can be accessed by any component in our application.
 
-When state becomes global we no longer have to pass state around through props, but we still need to make state changes predictable and without side effects.
+When state becomes global we no longer have to pass state around through props, but
+we need to make sure state changes are predictable and free of side effects.
 Redux turns our state into a *single immutable state tree*. The state tree is read-only.
 
 Whenever we want to change the state tree, we use a pure function that takes
